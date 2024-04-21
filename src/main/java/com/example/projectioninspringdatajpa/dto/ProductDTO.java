@@ -1,11 +1,7 @@
 package com.example.projectioninspringdatajpa.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 public class ProductDTO {
 
@@ -15,4 +11,11 @@ public class ProductDTO {
     private Double price;
 
     private int quantity;
+
+    public ProductDTO(int id, String name, Double price, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 }
