@@ -3,7 +3,9 @@ package com.example.projectioninspringdatajpa.service.impl;
 
 
 import com.example.projectioninspringdatajpa.dto.ProductDTO;
+import com.example.projectioninspringdatajpa.dto.ProductNameDTO;
 import com.example.projectioninspringdatajpa.entity.Product;
+import com.example.projectioninspringdatajpa.projections.ProductNamesProjection;
 import com.example.projectioninspringdatajpa.projections.ProductProjections;
 import com.example.projectioninspringdatajpa.repository.ProductRepo;
 import com.example.projectioninspringdatajpa.service.ProductService;
@@ -66,6 +68,16 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public List<ProductNameDTO> getProductNames() {
+        List<ProductNamesProjection> productNamesProjections=productRepo.getProductNames();
+        List<ProductNameDTO> productNameDTOS=new ArrayList<>();
+        for (ProductNamesProjection projection:productNamesProjections) {
+            ProductNameDTO productNameDTO=new ProductNameDTO(projection.getName());
+            productNameDTOS.add(productNameDTO);
+        }
+        return productNameDTOS;
+    }
 
 
 }

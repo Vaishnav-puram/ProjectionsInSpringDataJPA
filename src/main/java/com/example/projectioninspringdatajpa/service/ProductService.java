@@ -3,6 +3,7 @@ package com.example.projectioninspringdatajpa.service;
 
 
 import com.example.projectioninspringdatajpa.dto.ProductDTO;
+import com.example.projectioninspringdatajpa.dto.ProductNameDTO;
 import com.example.projectioninspringdatajpa.entity.Product;
 
 
@@ -23,5 +24,6 @@ public interface ProductService {
 
      List<ProductDTO> getProductWithRequiredAttributes();
 
+     List<ProductNameDTO> getProductNames();
 
 }
