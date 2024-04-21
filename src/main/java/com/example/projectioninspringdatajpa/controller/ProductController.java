@@ -2,6 +2,7 @@ package com.example.projectioninspringdatajpa.controller;
 
 
 import com.example.projectioninspringdatajpa.dto.ProductDTO;
+import com.example.projectioninspringdatajpa.dto.ProductNameDTO;
 import com.example.projectioninspringdatajpa.entity.Product;
 import com.example.projectioninspringdatajpa.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,8 @@ public class ProductController {
         return  productService.getProductWithRequiredAttributes();
     }
 
-
+    @GetMapping("/projections/getNames")
+    public List<ProductNameDTO> getProductNames(){
+        return productService.getProductNames();
+    }
 }
